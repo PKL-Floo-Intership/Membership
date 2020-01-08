@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:membership/login/login_page.dart';
-import 'package:membership/tab_bar/profile_view.dart';
 import 'package:membership/tab_bar/promotion_view.dart';
+import 'package:membership/tab_bar/profile_view.dart';
+import 'package:membership/login/my_login.dart';
 import 'package:membership/tab_bar/reward_view.dart';
 import 'package:membership/tab_bar/membership_view.dart';
+import 'package:membership/shared/app_colors.dart' as app_color;
 
 //Khosy
 void main(){
@@ -15,33 +16,9 @@ void main(){
   ));
 }
 
-
-// loginTika
-class MyLogin extends StatelessWidget {
-  final routes = <String, WidgetBuilder>{
-    LoginPage.tag: (context) => LoginPage(),
-    Promotion.tag: (context) => MyApp(),
-  };
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Membership',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.lightBlue,
-        fontFamily: 'NeoSans',
-      ),
-      home: LoginPage(),
-      routes: routes,
-    );
-  }
-}
-
-//Khosy
 class MyApp extends StatefulWidget {
   @override
   _HomeState createState() => _HomeState();
-
 }
 
 class _HomeState extends State<MyApp> with SingleTickerProviderStateMixin {
@@ -55,6 +32,7 @@ class _HomeState extends State<MyApp> with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
+      backgroundColor: app_color.backgroundApp,
       body: new TabBarView(
           controller: controller,
           children: <Widget>[
@@ -65,7 +43,7 @@ class _HomeState extends State<MyApp> with SingleTickerProviderStateMixin {
           ],
       ),
       bottomNavigationBar: new Material(
-        color: Colors.grey[800],
+        color: app_color.bar,
         child: new TabBar(
         controller: controller,
         tabs: <Widget>[
