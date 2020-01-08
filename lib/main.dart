@@ -3,13 +3,11 @@ import 'package:membership/tab_bar/profile_view.dart';
 import 'package:membership/tab_bar/promotion_view.dart';
 import 'package:membership/tab_bar/reward_view.dart';
 import 'package:membership/tab_bar/membership_view.dart';
+import 'package:membership/shared/app_colors.dart' as app_color;
 
 void main(){
   runApp(new MaterialApp(
     home: new MyApp(),
-    routes: <String, WidgetBuilder>{
-      'Profile' : (BuildContext) => new Profile()
-    },
   ));
 }
 
@@ -41,7 +39,7 @@ class _HomeState extends State<MyApp> with SingleTickerProviderStateMixin {
           ],
       ),
       bottomNavigationBar: new Material(
-        color: Colors.grey[800],
+        color: app_color.bar,
         child: new TabBar(
         controller: controller,
         tabs: <Widget>[
