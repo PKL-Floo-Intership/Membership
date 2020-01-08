@@ -44,7 +44,7 @@ class _LoginPageState extends State<LoginPage> {
     final loginButton = Padding(
       padding: EdgeInsets.symmetric(vertical: 16.0),
       child: Material(
-        borderRadius: BorderRadius.circular(30.0),
+        borderRadius: BorderRadius.circular(32.0),
         shadowColor: Colors.lightBlueAccent.shade100,
         elevation: 5.0,
         child: MaterialButton(
@@ -54,7 +54,7 @@ class _LoginPageState extends State<LoginPage> {
             Navigator.of(context).pushNamed(Promotion.tag);
           },
           color: Colors.lightBlueAccent,
-          child: Text('Loginjgfjg', style: TextStyle(color: Colors.white)),
+          child: Text('Login', style: TextStyle(color: Colors.white)),
         ),
       ),
     );
@@ -62,6 +62,15 @@ class _LoginPageState extends State<LoginPage> {
     final forgotLabel = FlatButton(
       child: Text(
         'Forgot password?',
+        style: TextStyle(color: Colors.black54),
+      ),
+      onPressed: () {},
+    );
+
+    //belum memiliki akun
+    final belumMemilikiAkunLabel = FlatButton(
+      child: Text(
+        'Belum memiliki akun? klik disini!',
         style: TextStyle(color: Colors.black54),
       ),
       onPressed: () {},
@@ -83,7 +92,8 @@ class _LoginPageState extends State<LoginPage> {
             password,
             SizedBox(height: 24.0),
             loginButton,
-            forgotLabel
+            forgotLabel,
+            belumMemilikiAkunLabel
           ],
         ),
       ),
