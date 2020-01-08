@@ -15,7 +15,7 @@ class _LoginPageState extends State<LoginPage> {
       child: CircleAvatar(
         backgroundColor: Colors.transparent,
         radius: 48.0,
-        child: Image.asset('assets/welcome.png'),
+        child: Image.asset('assets/wel.png'),
       ),
     );
 
@@ -54,7 +54,7 @@ class _LoginPageState extends State<LoginPage> {
             Navigator.of(context).pushNamed(Promotion.tag);
           },
           color: Colors.lightBlueAccent,
-          child: Text('Login', style: TextStyle(color: Colors.white)),
+          child: Text('Loginjgfjg', style: TextStyle(color: Colors.white)),
         ),
       ),
     );
@@ -66,6 +66,8 @@ class _LoginPageState extends State<LoginPage> {
       ),
       onPressed: () {},
     );
+
+
 
     return Scaffold(
       backgroundColor: Colors.white,
