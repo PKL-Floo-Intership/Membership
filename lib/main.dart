@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:membership/tab_bar/hal_home.dart';
-import 'package:membership/tab_bar/hal_poin.dart';
-import 'package:membership/tab_bar/hal_transaksi.dart';
+import 'package:membership/tab_bar/profile_view.dart';
+import 'package:membership/tab_bar/promotion_view.dart';
+import 'package:membership/tab_bar/reward_view.dart';
+import 'package:membership/tab_bar/membership_view.dart';
 
 void main(){
   runApp(new MaterialApp(
     home: new MyApp(),
+    routes: <String, WidgetBuilder>{
+      'Profile' : (BuildContext) => new Profile()
+    },
   ));
 }
 
@@ -21,28 +25,19 @@ class _HomeState extends State<MyApp> with SingleTickerProviderStateMixin {
 
   @override
   void initState() {
-    controller = new TabController(vsync: this, length: 3);
+    controller = new TabController(vsync: this, length: 4);
     super.initState();
   }
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      appBar: new AppBar(
-        backgroundColor: Colors.grey[800],
-        title: new Text("Aplikasi Membership"),
-        actions: <Widget>[
-          new Icon(Icons.search),
-          new Padding(padding: new EdgeInsets.all(10.0),),
-          new Icon(Icons.account_circle),
-          new Padding(padding: new EdgeInsets.all(10.0),),
-        ],
-      ),
       body: new TabBarView(
           controller: controller,
           children: <Widget>[
-            new Home(),
-            new Transaksi(),
-            new Point()
+            new Promotion(),
+            new Membership(),
+            new Reward(),
+            new Profile()
           ],
       ),
       bottomNavigationBar: new Material(
@@ -50,9 +45,10 @@ class _HomeState extends State<MyApp> with SingleTickerProviderStateMixin {
         child: new TabBar(
         controller: controller,
         tabs: <Widget>[
-          new Tab(icon: new Icon(Icons.home), text: "Beranda",),
-          new Tab(icon: new Icon(Icons.book),text: "Transaksi",),
-          new Tab(icon: new Icon(Icons.attach_money),text: "Poin",),
+          new Tab(icon: new Icon(Icons.assistant), text: "Promotion",),
+          new Tab(icon: new Icon(Icons.assignment_ind),text: "Membership",),
+          new Tab(icon: new Icon(Icons.account_balance_wallet),text: "Reward",),
+          new Tab(icon: new Icon(Icons.account_box),text: "Profile",),
         ],
       ),
       ),
