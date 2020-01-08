@@ -1,21 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:membership/tab_bar/profile_view.dart';
 import 'package:membership/tab_bar/promotion_view.dart';
+import 'package:membership/tab_bar/profile_view.dart';
+import 'package:membership/login/my_login.dart';
 import 'package:membership/tab_bar/reward_view.dart';
 import 'package:membership/tab_bar/membership_view.dart';
 import 'package:membership/shared/app_colors.dart' as app_color;
 
+//Khosy
 void main(){
   runApp(new MaterialApp(
-    home: new MyApp(),
+    home: new MyLogin(),
+    routes: <String, WidgetBuilder>{
+      'Profile' : (BuildContext) => new Profile()
+    },
   ));
 }
-
 
 class MyApp extends StatefulWidget {
   @override
   _HomeState createState() => _HomeState();
-
 }
 
 class _HomeState extends State<MyApp> with SingleTickerProviderStateMixin {
@@ -29,6 +32,7 @@ class _HomeState extends State<MyApp> with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
+      backgroundColor: app_color.backgroundApp,
       body: new TabBarView(
           controller: controller,
           children: <Widget>[
