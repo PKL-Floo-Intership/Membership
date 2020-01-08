@@ -16,7 +16,7 @@ class _RegisterPageState extends State<RegisterPage> {
       autofocus: false,
       initialValue: '',
       decoration: InputDecoration(
-        hintText: 'example:membership@gmail.com',
+        hintText: 'Username',
         contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
       ),
@@ -68,19 +68,16 @@ class _RegisterPageState extends State<RegisterPage> {
 
     final registerButton = Padding(
       padding: EdgeInsets.symmetric(vertical: 16.0),
-      child: Material(
-        borderRadius: BorderRadius.circular(30.0),
-        shadowColor: Colors.lightBlueAccent.shade100,
-        elevation: 5.0,
-        child: MaterialButton(
-          minWidth: 200.0,
-          height: 42.0,
-          onPressed: () {
-            Navigator.of(context).pushNamed(Promotion.tag);
-          },
-          color: Colors.lightBlueAccent,
-          child: Text('Sign Up', style: TextStyle(color: Colors.white)),
+      child: RaisedButton(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(24),
         ),
+        onPressed: () {
+          Navigator.of(context).pushNamed(Promotion.tag);
+        },
+        padding: EdgeInsets.all(12),
+        color: Colors.lightBlueAccent,
+        child: Text('Sign Up', style: TextStyle(color: Colors.white)),
       ),
     );
 

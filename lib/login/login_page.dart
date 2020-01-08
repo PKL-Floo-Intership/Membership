@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:membership/register/register_page.dart';
 import 'package:membership/tab_bar/promotion_view.dart';
 
 class LoginPage extends StatefulWidget {
@@ -64,7 +65,9 @@ class _LoginPageState extends State<LoginPage> {
         'Forgot password?',
         style: TextStyle(color: Colors.black54),
       ),
-      onPressed: () {},
+      onPressed: () {
+          Navigator.of(context).pushNamed(RegisterPage.tag);
+      }
     );
 
     return Scaffold(
