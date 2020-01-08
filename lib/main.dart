@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:membership/login/login_page.dart';
 import 'package:membership/tab_bar/profile_view.dart';
 import 'package:membership/tab_bar/promotion_view.dart';
 import 'package:membership/tab_bar/reward_view.dart';
 import 'package:membership/tab_bar/membership_view.dart';
 
+//Khosy
 void main(){
   runApp(new MaterialApp(
-    home: new MyApp(),
+    home: new MyLogin(),
     routes: <String, WidgetBuilder>{
       'Profile' : (BuildContext) => new Profile()
     },
@@ -14,6 +16,28 @@ void main(){
 }
 
 
+// loginTika
+class MyLogin extends StatelessWidget {
+  final routes = <String, WidgetBuilder>{
+    LoginPage.tag: (context) => LoginPage(),
+    Promotion.tag: (context) => MyApp(),
+  };
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Membership',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.lightBlue,
+        fontFamily: 'NeoSans',
+      ),
+      home: LoginPage(),
+      routes: routes,
+    );
+  }
+}
+
+//Khosy
 class MyApp extends StatefulWidget {
   @override
   _HomeState createState() => _HomeState();

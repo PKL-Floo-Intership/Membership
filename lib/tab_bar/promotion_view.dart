@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class Promotion extends StatelessWidget {
+
+  static String tag = 'promotion-page';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
