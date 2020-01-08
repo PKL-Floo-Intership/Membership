@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:membership/shared/app_colors.dart' as app_color;
 
 class Membership extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: app_color.backgroundApp,
       appBar: new AppBar(
-        backgroundColor: Colors.grey[800],
+        backgroundColor: app_color.bar,
         title: new Text("Membership"),
       ),
       body: new Container(
