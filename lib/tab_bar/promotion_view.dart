@@ -18,19 +18,19 @@ class Promotion extends StatelessWidget {
           new ListPromotion(
             photo: "assets/logo.png",
             promotionTitle: "Promotion Title",
-            decs: "Test test test test test \nTest test test test test \nTest test test test test \n ",
+            decs: "Test test test test test \nTest test test test test \nTest test test test test",
             expire: "Expire : 22 Juli 2019",
             ),
             new ListPromotion(
-            photo: "assets/barcode1.png",
+            photo: "assets/logo.png",
             promotionTitle: "Promotion Title",
-            decs: "Test test test test test \nTest test test test test \nTest test test test test \n ",
+            decs: "Test test test test test \nTest test test test test \nTest test test test test",
             expire: "Expire : 22 Juli 2019",
             ),
             new ListPromotion(
-            photo: "assets/barcode1.png",
+            photo: "assets/logo.png",
             promotionTitle: "Promotion Title",
-            decs: "Test test test test test \nTest test test test test \nTest test test test test \n ",
+            decs: "Test test test test test \nTest test test test test \nTest test test test test ",
             expire: "Expire : 22 Juli 2019",
             ),
         ],
@@ -56,9 +56,10 @@ class ListPromotion extends StatelessWidget {
       child: new Center(
         child: Row(
           children: <Widget>[
-            new Image.asset(photo, width: 200,),
+            new Image.asset(photo, width: 120,),
             
             new Container(
+              padding: EdgeInsets.all(20),
               child: new Center(
                 child: new Column(
                     children: <Widget>[
