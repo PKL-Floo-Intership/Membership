@@ -44,7 +44,7 @@ class Membership extends StatelessWidget {
                               new Padding(
                                 padding: const EdgeInsets.only(
                                     left: 120.0, bottom: 20),
-                                child: Text("Valid : 20/21", style: textStyle.textCard),
+                                child: Text("Valid : 20/21", style: textStyle.textCardV),
                               ),
                             ],
                           )
