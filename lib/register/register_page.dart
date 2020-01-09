@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:membership/login/login_page.dart';
 import 'package:membership/tab_bar/promotion_view.dart';
 
 class RegisterPage extends StatefulWidget {
-  static String tag = 'register-page';
+  static String toRegister = 'register-page';
   @override
   _RegisterPageState createState() => new _RegisterPageState();
 }
@@ -73,7 +74,7 @@ class _RegisterPageState extends State<RegisterPage> {
           borderRadius: BorderRadius.circular(24),
         ),
         onPressed: () {
-          Navigator.of(context).pushNamed(Promotion.tag);
+          Navigator.of(context).pushNamed(LoginPage.toLogin);
         },
         padding: EdgeInsets.all(12),
         color: Colors.lightBlueAccent,
