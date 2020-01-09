@@ -16,7 +16,7 @@ class _LoginPageState extends State<LoginPage> {
       child: CircleAvatar(
         backgroundColor: Colors.transparent,
         radius: 48.0,
-        child: Image.asset('assets/welcome.png'),
+        child: Image.asset('assets/wel.png'),
       ),
     );
 
@@ -44,19 +44,16 @@ class _LoginPageState extends State<LoginPage> {
 
     final loginButton = Padding(
       padding: EdgeInsets.symmetric(vertical: 16.0),
-      child: Material(
-        borderRadius: BorderRadius.circular(30.0),
-        shadowColor: Colors.lightBlueAccent.shade100,
-        elevation: 5.0,
-        child: MaterialButton(
-          minWidth: 200.0,
-          height: 42.0,
-          onPressed: () {
-            Navigator.of(context).pushNamed(Promotion.tag);
-          },
-          color: Colors.lightBlueAccent,
-          child: Text('Login', style: TextStyle(color: Colors.white)),
+      child: RaisedButton(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(24),
         ),
+        onPressed: () {
+          Navigator.of(context).pushNamed(Promotion.tag);
+        },
+        padding: EdgeInsets.all(12),
+        color: Colors.lightBlueAccent,
+        child: Text('Login', style: TextStyle(color: Colors.white)),
       ),
     );
 
@@ -69,6 +66,17 @@ class _LoginPageState extends State<LoginPage> {
           Navigator.of(context).pushNamed(RegisterPage.tag);
       }
     );
+
+    //belum memiliki akun
+    final belumMemilikiAkunLabel = FlatButton(
+      child: Text(
+        'Belum memiliki akun? klik disini!',
+        style: TextStyle(color: Colors.black54),
+      ),
+      onPressed: () {},
+    );
+
+
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -84,7 +92,8 @@ class _LoginPageState extends State<LoginPage> {
             password,
             SizedBox(height: 24.0),
             loginButton,
-            forgotLabel
+            forgotLabel,
+            belumMemilikiAkunLabel
           ],
         ),
       ),
