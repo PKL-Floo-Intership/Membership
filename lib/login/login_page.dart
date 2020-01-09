@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:membership/forgot_password/forgot_page.dart';
 import 'package:membership/register/register_page.dart';
 import 'package:membership/tab_bar/promotion_view.dart';
 import 'package:membership/shared/app_colors.dart' as app_color;
@@ -64,7 +65,7 @@ class _LoginPageState extends State<LoginPage> {
         style: TextStyle(color: Colors.black54),
       ),
       onPressed: () {
-          // Navigator.of(context).pushNamed(RegisterPage.tag);
+          Navigator.of(context).pushNamed(ForgotPasswordPage.toForgotPassword);
       }
     );
 
