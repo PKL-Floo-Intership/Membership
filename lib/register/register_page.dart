@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:membership/login/login_page.dart';
-import 'package:membership/tab_bar/promotion_view.dart';
+import 'package:membership/shared/app_colors.dart' as app_color;
 
 class RegisterPage extends StatefulWidget {
   static String toRegister = 'register-page';
@@ -11,7 +11,14 @@ class RegisterPage extends StatefulWidget {
 class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
-
+    final logo = Hero(
+      tag: 'welcome',
+      child: CircleAvatar(
+        backgroundColor: Colors.transparent,
+        radius: 48.0,
+        child: Image.asset('assets/wel.png'),
+      ),
+    );
     final username = TextFormField(
       keyboardType: TextInputType.text,
       autofocus: false,
@@ -56,7 +63,7 @@ class _RegisterPageState extends State<RegisterPage> {
       ),
     );
 
-       final namaBelakang = TextFormField(
+    final namaBelakang = TextFormField(
       keyboardType: TextInputType.text,
       autofocus: false,
       initialValue: '',
@@ -77,18 +84,24 @@ class _RegisterPageState extends State<RegisterPage> {
           Navigator.of(context).pushNamed(LoginPage.toLogin);
         },
         padding: EdgeInsets.all(12),
-        color: Colors.lightBlueAccent,
+        color: app_color.icon,
         child: Text('Sign Up', style: TextStyle(color: Colors.white)),
       ),
     );
 
     return Scaffold(
-      backgroundColor: Colors.white,
+      appBar: new AppBar(
+        backgroundColor: app_color.bar,
+        title: new Text("Register Account"),
+      ),
+      backgroundColor: app_color.backgroundApp,
       body: Center(
         child: ListView(
           shrinkWrap: true,
           padding: EdgeInsets.only(left: 24.0, right: 24.0),
           children: <Widget>[
+            logo,
+            SizedBox(height: 40.0),
             username,
             SizedBox(height: 8.0),
             password,

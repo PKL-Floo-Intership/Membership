@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:membership/register/register_page.dart';
 import 'package:membership/tab_bar/promotion_view.dart';
+import 'package:membership/shared/app_colors.dart' as app_color;
 
 class LoginPage extends StatefulWidget {
   static String toLogin = 'login-page';
@@ -52,7 +53,7 @@ class _LoginPageState extends State<LoginPage> {
           Navigator.of(context).pushNamed(Promotion.toPromotion);
         },
         padding: EdgeInsets.all(12),
-        color: Colors.lightBlueAccent,
+        color: app_color.icon,
         child: Text('Login', style: TextStyle(color: Colors.white)),
       ),
     );
@@ -70,7 +71,7 @@ class _LoginPageState extends State<LoginPage> {
     //belum memiliki akun
     final belumMemilikiAkunLabel = FlatButton(
       child: Text(
-        'Belum memiliki akun? klik disini!',
+        'Create Account',
         style: TextStyle(color: Colors.black54),
       ),
       onPressed: () {
@@ -81,7 +82,7 @@ class _LoginPageState extends State<LoginPage> {
 
 
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: app_color.backgroundApp,
       body: Center(
         child: ListView(
           shrinkWrap: true,
