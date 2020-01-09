@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:membership/register/register_page.dart';
 import 'package:membership/tab_bar/promotion_view.dart';
 
 class LoginPage extends StatefulWidget {
-  static String tag = 'login-page';
+  static String toLogin = 'login-page';
   @override
   _LoginPageState createState() => new _LoginPageState();
 }
@@ -48,7 +49,7 @@ class _LoginPageState extends State<LoginPage> {
           borderRadius: BorderRadius.circular(24),
         ),
         onPressed: () {
-          Navigator.of(context).pushNamed(Promotion.tag);
+          Navigator.of(context).pushNamed(Promotion.toPromotion);
         },
         padding: EdgeInsets.all(12),
         color: Colors.lightBlueAccent,
@@ -61,7 +62,9 @@ class _LoginPageState extends State<LoginPage> {
         'Forgot password?',
         style: TextStyle(color: Colors.black54),
       ),
-      onPressed: () {},
+      onPressed: () {
+          // Navigator.of(context).pushNamed(RegisterPage.tag);
+      }
     );
 
     //belum memiliki akun
@@ -70,7 +73,9 @@ class _LoginPageState extends State<LoginPage> {
         'Belum memiliki akun? klik disini!',
         style: TextStyle(color: Colors.black54),
       ),
-      onPressed: () {},
+      onPressed: () {
+        Navigator.of(context).pushNamed(RegisterPage.toRegister);
+      },
     );
 
 
