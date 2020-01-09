@@ -7,9 +7,6 @@ import 'package:membership/main.dart';
 
 class MyLogin extends StatelessWidget {
   
-  
-  
-  
   final routes = <String, WidgetBuilder>{
     LoginPage.toLogin: (context) => LoginPage(),
     Promotion.toPromotion: (context) => MyApp(),
