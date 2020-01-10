@@ -12,18 +12,28 @@ class _RewardState extends State<Reward>{
   List<Container> daftarReward = new List();
 
   var reward=[
-    {"nama": "reward 1", "gambar": "rew1.png"},
-    {"nama": "reward 2", "gambar": "rew2.png"},
-    {"nama": "reward 3", "gambar": "rew3.png"},
-    {"nama": "reward 4", "gambar": "rew4.png"},
-  ];
+    {"nama": "reward 1", "gambar": "reward1.png"},
+    {"nama": "reward 2", "gambar": "reward1.png"},
+    {"nama": "reward 3", "gambar": "reward1.png"},
+    {"nama": "reward 4", "gambar": "reward1.png"},
+  ]; 
 
   _buatlist()async{
     for (var i=0; i<reward.length; i++){
       final rewardnya = reward[i];
+
+      final String gambar = rewardnya["gambar"];
+
       daftarReward.add(
         new Container(
-          child: new Text(rewardnya["nama"]),
+          child: new Card(child:
+            new Column(
+              children: <Widget>[
+                new Image.asset("img/$gambar", fit: BoxFit.cover),
+                new Text(rewardnya['nama'], style: new TextStyle(fontSize: 20.0),)
+              ],
+            )
+          )
         )
       );
     }

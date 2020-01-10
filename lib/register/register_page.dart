@@ -41,34 +41,34 @@ class _RegisterPageState extends State<RegisterPage> {
       ),
     );
 
-    final kofirmasiPassword = TextFormField(
+    final confirmPassword = TextFormField(
       autofocus: false,
       initialValue: '',
       obscureText: true,
       decoration: InputDecoration(
-        hintText: ' Konfirmasi Password',
+        hintText: 'Confirm Password',
         contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
       ),
     );
 
-    final namaDepan = TextFormField(
+    final firstName = TextFormField(
       keyboardType: TextInputType.text,
       autofocus: false,
       initialValue: '',
       decoration: InputDecoration(
-        hintText: 'Nama Depan',
+        hintText: 'First Name',
         contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
       ),
     );
 
-    final namaBelakang = TextFormField(
+    final lastName = TextFormField(
       keyboardType: TextInputType.text,
       autofocus: false,
       initialValue: '',
       decoration: InputDecoration(
-        hintText: 'Nama Belakang',
+        hintText: 'Last Name',
         contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
       ),
@@ -102,16 +102,17 @@ class _RegisterPageState extends State<RegisterPage> {
           children: <Widget>[
             logo,
             SizedBox(height: 40.0),
+            firstName,
+            SizedBox(height: 8.0),
+            lastName,
+            SizedBox(height: 8.0),
             username,
             SizedBox(height: 8.0),
             password,
             SizedBox(height: 8.0),
-            kofirmasiPassword,
+            confirmPassword,
             SizedBox(height: 8.0),
-            namaDepan,
-            SizedBox(height: 8.0),
-            namaBelakang,
-            SizedBox(height: 8.0),
+            
             registerButton,
           ],
         ),
