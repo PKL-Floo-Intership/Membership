@@ -12,18 +12,22 @@ class _SplashState extends State<Splash> {
   @override
   void initState(){
     super.initState();
-    Future.delayed(Duration(
-      seconds: 1
-      ),() {
-        Navigator.push(
-          context, 
-          MaterialPageRoute(
-            builder: (context) => MyLogin(),
-          ),
-        );
-      },
+    navPage();
+  }
+
+  movePage(){
+    Navigator.of(context).pushReplacement(
+      MaterialPageRoute(
+        builder: (context) => MyLogin(),
+      )
     );
   }
+
+  navPage()async{
+    var dur = new Duration( seconds: 2);
+    return new Timer(dur, movePage);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
