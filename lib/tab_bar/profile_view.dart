@@ -11,7 +11,29 @@ class Profile extends StatelessWidget{
       autofocus: false,
       initialValue: '',
       decoration: InputDecoration(
-        hintText: 'John Legend',
+        hintText: 'Username',
+        contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+      ),
+    );
+
+    final firstName = TextFormField(
+      keyboardType: TextInputType.text,
+      autofocus: false,
+      initialValue: '',
+      decoration: InputDecoration(
+        hintText: 'Your First Name',
+        contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+      ),
+    );
+
+    final lastName = TextFormField(
+      keyboardType: TextInputType.text,
+      autofocus: false,
+      initialValue: '',
+      decoration: InputDecoration(
+        hintText: 'Your Last Name',
         contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
       ),
@@ -33,7 +55,7 @@ class Profile extends StatelessWidget{
       initialValue: '',
       obscureText: true,
       decoration: InputDecoration(
-        hintText: 'password',
+        hintText: 'Confirm password',
         contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
       ),
@@ -50,34 +72,13 @@ class Profile extends StatelessWidget{
       ),
     );
 
-    final namaDepan = TextFormField(
-      keyboardType: TextInputType.text,
-      autofocus: false,
-      initialValue: '',
-      decoration: InputDecoration(
-        hintText: 'John',
-        contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
-      ),
-    );
-
-    final namaBelakang = TextFormField(
-      keyboardType: TextInputType.text,
-      autofocus: false,
-      initialValue: '',
-      decoration: InputDecoration(
-        hintText: 'Legend',
-        contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
-      ),
-    );
 
     final noHP = TextFormField(
       keyboardType: TextInputType.phone,
       autofocus: false,
       initialValue: '',
       decoration: InputDecoration(
-        hintText: '08xxxxxxx',
+        hintText: 'Your Telephone Number',
         contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
       ),
@@ -88,18 +89,18 @@ class Profile extends StatelessWidget{
       autofocus: false,
       initialValue: '',
       decoration: InputDecoration(
-        hintText: 'John Legend',
+        hintText: 'Your ID Number',
         contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
       ),
     );
 
-    final alamat = TextFormField(
+    final address = TextFormField(
       keyboardType: TextInputType.text,
       autofocus: false,
       initialValue: '',
       decoration: InputDecoration(
-        hintText: 'Jl. Sendiri',
+        hintText: 'Your Address',
         contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0),),
       ),
@@ -133,19 +134,19 @@ class Profile extends StatelessWidget{
           children: <Widget>[
             username,
             SizedBox(height: 15.0),
+            firstName,
+            SizedBox(height: 15.0),
+            lastName,
+            SizedBox(height: 15.0),
             password,
             SizedBox(height: 15.0),
             confirmPassword,
             SizedBox(height: 15.0),
             birthday,
             SizedBox(height: 15.0),
-            namaDepan,
-            SizedBox(height: 15.0),
-            namaBelakang,
-            SizedBox(height: 15.0),
             noHP,
             SizedBox(height: 15.0),
-            alamat,
+            address,
             SizedBox(height: 15.0),
             saveButton
           ],
@@ -154,6 +155,3 @@ class Profile extends StatelessWidget{
     );
   }
 }
-
-
-
