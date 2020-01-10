@@ -40,7 +40,7 @@ class _forgotPasswordPageState extends State<ForgotPasswordPage> {
       initialValue: '',
       obscureText: true,
       decoration: InputDecoration(
-        hintText: 'Old Password',
+        hintText: 'Confirm Password',
         contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
       ),
@@ -57,7 +57,7 @@ class _forgotPasswordPageState extends State<ForgotPasswordPage> {
         },
         padding: EdgeInsets.all(12),
         color: app_color.icon,
-        child: Text('Confirm Password', style: TextStyle(color: Colors.white)),
+        child: Text('Change Password', style: TextStyle(color: Colors.white)),
       ),
     );
 
