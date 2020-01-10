@@ -59,10 +59,14 @@ class ListPromotion extends StatelessWidget {
               children: <Widget>[
                 new Row(
                   children: <Widget>[
-                    new Image.asset(
+                    new Padding(
+                      padding: EdgeInsets.all(10),
+                      child: new Image.asset(
                       photo,
                       width: 120,
                     ),
+                    ),
+                    
                     new Container(
                       padding: EdgeInsets.all(15),
                       child: new Center(
