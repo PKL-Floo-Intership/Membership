@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:membership/shared/app_colors.dart' as app_color;
 
 
+
 class Reward extends StatefulWidget {
   @override
   _RewardState createState() => new _RewardState();
@@ -12,18 +13,28 @@ class _RewardState extends State<Reward>{
   List<Container> daftarReward = new List();
 
   var reward=[
-    {"nama": "reward 1", "gambar": "rew1.png"},
-    {"nama": "reward 2", "gambar": "rew2.png"},
-    {"nama": "reward 3", "gambar": "rew3.png"},
-    {"nama": "reward 4", "gambar": "rew4.png"},
-  ];
+    {"nama": "reward 1", "gambar": "barcode1.png"},
+    {"nama": "reward 2", "gambar": "barcode1.png"},
+    {"nama": "reward 3", "gambar": "barcode1.png"},
+    {"nama": "reward 4", "gambar": "barcode1.png"},
+  ]; 
 
   _buatlist()async{
     for (var i=0; i<reward.length; i++){
       final rewardnya = reward[i];
+
+      final String gambar = rewardnya["gambar"];
+
       daftarReward.add(
         new Container(
-          child: new Text(rewardnya["nama"]),
+          child: new Card(
+            child: new Column(
+              children: <Widget>[
+                new Image.asset("assets/$gambar", fit: BoxFit.cover, width: 200,),
+                new Text(rewardnya['nama'], style: new TextStyle(fontSize: 20.0),)
+              ],
+            )
+          )
         )
       );
     }
