@@ -27,10 +27,25 @@ class _RewardState extends State<Reward>{
 
       daftarReward.add(
         new Container(
+          padding: new EdgeInsets.all(10.0),
           child: new Card(
             child: new Column(
               children: <Widget>[
-                new Image.asset("assets/$gambar", fit: BoxFit.cover, width: 200,),
+
+                new Hero(
+                  tag: rewardnya['nama'],
+                  child: new Material(
+                    child: new InkWell(
+                      onTap: ()=> Navigator.of(context).push(new MaterialPageRoute(
+                        builder: (BuildContext context) => new Detail(nama: rewardnya['nama'],gambar: gambar,),
+                      )),
+                      child: new Image.asset("assets/$gambar", fit: BoxFit.cover,),
+                    ),
+                  ),
+                ),
+
+                
+                new Padding(padding: new EdgeInsets.all(10.0),),
                 new Text(rewardnya['nama'], style: new TextStyle(fontSize: 20.0),)
               ],
             )
@@ -62,3 +77,33 @@ class _RewardState extends State<Reward>{
     );
   }
 }
+
+//click picture
+class Detail extends StatelessWidget{
+  Detail({this.nama, this.gambar});
+  final String nama;
+  final String gambar;
+
+  @override
+  Widget build(BuildContext context){
+    return new Scaffold(
+      body: new ListView(
+        children: <Widget>[
+          new Container(
+            height: 240.0,
+            child:
+            new Hero(
+              tag: nama,
+              child: new Material(
+                child: new InkWell(
+                  child: new Image.asset("assets/$gambar"),
+                  ),
+              )
+            )
+          )
+        ],
+      ),
+    );
+  }
+}
+
