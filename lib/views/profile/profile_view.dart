@@ -44,7 +44,7 @@ class Profile extends StatelessWidget{
       initialValue: '',
       obscureText: true,
       decoration: InputDecoration(
-        hintText: 'password',
+        hintText: 'Password',
         contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
       ),
