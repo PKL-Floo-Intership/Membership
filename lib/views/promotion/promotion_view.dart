@@ -10,7 +10,7 @@ class Promotion extends StatelessWidget {
       backgroundColor: app_color.backgroundApp,
       appBar: new AppBar(
         backgroundColor: app_color.bar,
-        title: new Text("Promotion"),
+        title: new Text("Promotion ",style: textStyle.textAppbar),
       ),
       body: new ListView(
         children: <Widget>[

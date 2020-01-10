@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:membership/shared/app_colors.dart' as app_color;
+import 'package:membership/shared/text_style.dart' as textStyle;
+
 
 
 
@@ -67,7 +69,7 @@ class _RewardState extends State<Reward>{
       backgroundColor: app_color.backgroundApp,
       appBar: new AppBar(
       backgroundColor: app_color.bar,
-      title: new Text("Reward"),
+      title: new Text("Reward" ,style: textStyle.textAppbar),
       ),
 
       body: new GridView.count(

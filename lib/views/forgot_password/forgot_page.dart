@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:membership/shared/app_colors.dart' as app_color;
 import 'package:membership/views/login/login_page.dart';
+import 'package:membership/shared/text_style.dart' as textStyle;
 
 class ForgotPasswordPage extends StatefulWidget{
   static String toForgotPassword = 'forgot-page';
@@ -65,7 +66,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
       backgroundColor: app_color.backgroundApp,
       appBar: new AppBar(
         backgroundColor: app_color.bar,
-        title: new Text("Forgot Password"),
+        title: new Text("Forgot Password", style: textStyle.textAppbar),
       ),
       body: Center(
         child: ListView(

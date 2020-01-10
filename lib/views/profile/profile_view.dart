@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:membership/shared/app_colors.dart' as app_color;
+import 'package:membership/shared/text_style.dart' as textStyle;
+
 
 
 class Profile extends StatelessWidget{
@@ -126,7 +128,7 @@ class Profile extends StatelessWidget{
       backgroundColor: app_color.backgroundApp,
       appBar: new AppBar(
         backgroundColor: app_color.bar,
-        title: new Text("Profile Details"),
+        title: new Text("Profile Details", style: textStyle.textAppbar),
       ),
       body: Center(
         child: ListView(
