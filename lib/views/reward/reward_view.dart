@@ -30,7 +30,7 @@ class _RewardState extends State<Reward>{
           child: new Card(
             child: new Column(
               children: <Widget>[
-                new Image.asset("assets/$gambar", fit: BoxFit.cover),
+                new Image.asset("assets/$gambar", fit: BoxFit.cover, width: 200,),
                 new Text(rewardnya['nama'], style: new TextStyle(fontSize: 20.0),)
               ],
             )
