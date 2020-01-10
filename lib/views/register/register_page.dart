@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:membership/login/login_page.dart';
+import 'package:membership/views/login/login_page.dart';
 import 'package:membership/shared/app_colors.dart' as app_color;
 
 class RegisterPage extends StatefulWidget {
