@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:membership/forgot_password/forgot_page.dart';
-import 'package:membership/login/login_page.dart';
-import 'package:membership/tab_bar/promotion_view.dart';
-import 'package:membership/register/register_page.dart';
-import 'package:membership/main.dart';
+import 'package:membership/views/forgot_password/forgot_page.dart';
+import 'package:membership/views/login/login_page.dart';
+import 'package:membership/views/promotion/promotion_view.dart';
+import 'package:membership/views/register/register_page.dart';
+import 'package:membership/views/layout.dart';
 import 'package:membership/shared/app_colors.dart' as app_color;
 
 

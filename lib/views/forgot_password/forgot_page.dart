@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:membership/shared/app_colors.dart' as app_color;
-import 'package:membership/login/login_page.dart';
+import 'package:membership/views/login/login_page.dart';
 
 class ForgotPasswordPage extends StatefulWidget{
   static String toForgotPassword = 'forgot-page';
@@ -24,23 +24,23 @@ class _forgotPasswordPageState extends State<ForgotPasswordPage> {
       ),
     );
 
-    final passwordBaru = TextFormField(
+    final newPassword = TextFormField(
       autofocus: false,
       initialValue: '',
       obscureText: true,
       decoration: InputDecoration(
-        hintText: 'Password Baru',
+        hintText: 'New Password',
         contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
       ),
     );
 
-    final passwordlama = TextFormField(
+    final oldPassword = TextFormField(
       autofocus: false,
       initialValue: '',
       obscureText: true,
       decoration: InputDecoration(
-        hintText: 'Password Lama',
+        hintText: 'Old Password',
         contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
       ),
@@ -74,9 +74,9 @@ class _forgotPasswordPageState extends State<ForgotPasswordPage> {
           children: <Widget>[
             username,
             SizedBox(height: 8.0),
-            passwordBaru,
+            newPassword,
             SizedBox(height: 8.0),
-            passwordlama,
+            oldPassword,
             SizedBox(height: 24.0),
             confirmPassword
           ],

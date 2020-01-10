@@ -9,3 +9,4 @@ const textCardV = TextStyle(fontWeight: FontWeight.w200, fontSize: 16.0, color: 
 const textListT = TextStyle(fontWeight: FontWeight.w700, fontSize: 22.0, color: appColor.icon);
 const textListD = TextStyle(fontWeight: FontWeight.w300, fontSize: 16.0, color: appColor.icon);
 const textListx = TextStyle(fontWeight: FontWeight.w400, fontSize: 16.0, color: appColor.icon);
+const textBott = TextStyle(fontWeight: FontWeight.w500, fontSize: 14.0, color: appColor.icon);
