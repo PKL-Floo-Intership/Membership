@@ -4,7 +4,7 @@ import 'package:membership/views/login/login_page.dart';
 import 'package:membership/views/promotion/promotion_view.dart';
 import 'package:membership/views/register/register_page.dart';
 import 'package:membership/views/layout.dart';
-import 'package:membership/shared/app_colors.dart' as app_color;
+// import 'package:membership/shared/app_colors.dart' as app_color;
 
 
 class MyLogin extends StatelessWidget {

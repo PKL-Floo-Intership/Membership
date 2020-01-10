@@ -5,10 +5,10 @@ import 'package:membership/views/login/login_page.dart';
 class ForgotPasswordPage extends StatefulWidget{
   static String toForgotPassword = 'forgot-page';
   @override
-  _forgotPasswordPageState createState() => new _forgotPasswordPageState();
+  _ForgotPasswordPageState createState() => new _ForgotPasswordPageState();
 }
 
-class _forgotPasswordPageState extends State<ForgotPasswordPage> {
+class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
   @override
   Widget build(BuildContext context) {
     

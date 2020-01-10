@@ -85,16 +85,16 @@ class Profile extends StatelessWidget{
       ),
     );
 
-    final idNumber = TextFormField(
-      keyboardType: TextInputType.number,
-      autofocus: false,
-      initialValue: '',
-      decoration: InputDecoration(
-        hintText: 'Your ID Number',
-        contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
-      ),
-    );
+    // final idNumber = TextFormField(
+    //   keyboardType: TextInputType.number,
+    //   autofocus: false,
+    //   initialValue: '',
+    //   decoration: InputDecoration(
+    //     hintText: 'Your ID Number',
+    //     contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+    //     border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+    //   ),
+    // );
 
     final address = TextFormField(
       keyboardType: TextInputType.text,

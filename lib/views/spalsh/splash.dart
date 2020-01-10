@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:membership/views/login/login_page.dart';
 import 'package:membership/views/login/my_login.dart';
 import 'dart:async';
 
