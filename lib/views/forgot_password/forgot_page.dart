@@ -72,6 +72,10 @@ class _forgotPasswordPageState extends State<ForgotPasswordPage> {
           shrinkWrap: true,
           padding: EdgeInsets.only(left: 24.0, right: 24.0),
           children: <Widget>[
+            new Padding(
+              padding: EdgeInsets.all(40),
+               child : Image.asset('assets/wel.png'),
+            ),
             username,
             SizedBox(height: 8.0),
             newPassword,
