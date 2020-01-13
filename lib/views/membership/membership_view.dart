@@ -56,6 +56,7 @@ class Membership extends StatelessWidget {
                   ),
                 ),
               );
+              
                 }
               ),
               // new Padding(
@@ -96,13 +97,20 @@ class Membership extends StatelessWidget {
               //     ),
               //   ),
               // ),
-              new Padding(
+              new LayoutBuilder(
+              builder: (BuildContext context, BoxConstraints constraints){
+                return Padding(
                 padding: const EdgeInsets.only(top: 26.0),
                 child: Column(
                   children: <Widget>[new Image.asset('assets/barcode1.png')],
                 ),
+              );
+                }
               ),
-              new Padding(
+                
+                new LayoutBuilder(
+                  builder: (BuildContext context, BoxConstraints constraints){
+                  return Padding(
                 padding: const EdgeInsets.only(top: 26.0),
                 child: Column(
                   children: <Widget>[
@@ -110,7 +118,12 @@ class Membership extends StatelessWidget {
                         style: textStyle.textTitleB)
                   ],
                 ),
-              ),
+              ); 
+                  }
+                )
+                
+                
+              
             ]),
       ),
     );
