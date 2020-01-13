@@ -16,7 +16,9 @@ class Membership extends StatelessWidget {
         child: new Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              new Padding(
+              Flexible(
+                flex: 2,
+                child: new Padding(
                 padding: const EdgeInsets.only(top: 26.0),
                 child: Card(
                   color: app_color.icon,
@@ -54,13 +56,21 @@ class Membership extends StatelessWidget {
                   ),
                 ),
               ),
-              new Padding(
+              ),
+
+              Flexible(
+                flex: 2,
+                child: new Padding(
                 padding: const EdgeInsets.only(top: 26.0),
                 child: Column(
                   children: <Widget>[new Image.asset('assets/barcode1.png')],
                 ),
               ),
-              new Padding(
+              ),
+              
+              Flexible(
+                flex: 1,
+                child: new Padding(
                 padding: const EdgeInsets.only(top: 26.0),
                 child: Column(
                   children: <Widget>[
@@ -69,6 +79,8 @@ class Membership extends StatelessWidget {
                   ],
                 ),
               ),
+              ),
+              
             ]),
       ),
     );
