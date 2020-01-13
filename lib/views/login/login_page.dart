@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:membership/tab_bar/promotion_view.dart';
+import 'package:membership/views/forgot_password/forgot_page.dart';
+import 'package:membership/views/register/register_page.dart';
+import 'package:membership/views/promotion/promotion_view.dart';
+import 'package:membership/shared/app_colors.dart' as app_color;
 
 class LoginPage extends StatefulWidget {
-  static String tag = 'login-page';
+  static String toLogin = 'login-page';
   @override
   _LoginPageState createState() => new _LoginPageState();
 }
@@ -15,7 +18,7 @@ class _LoginPageState extends State<LoginPage> {
       child: CircleAvatar(
         backgroundColor: Colors.transparent,
         radius: 48.0,
-        child: Image.asset('assets/welcome.png'),
+        child: Image.asset('assets/wel.png'),
       ),
     );
 
@@ -43,19 +46,16 @@ class _LoginPageState extends State<LoginPage> {
 
     final loginButton = Padding(
       padding: EdgeInsets.symmetric(vertical: 16.0),
-      child: Material(
-        borderRadius: BorderRadius.circular(32.0),
-        shadowColor: Colors.lightBlueAccent.shade100,
-        elevation: 5.0,
-        child: MaterialButton(
-          minWidth: 200.0,
-          height: 42.0,
-          onPressed: () {
-            Navigator.of(context).pushNamed(Promotion.tag);
-          },
-          color: Colors.lightBlueAccent,
-          child: Text('Login', style: TextStyle(color: Colors.white)),
+      child: RaisedButton(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(24),
         ),
+        onPressed: () {
+          Navigator.of(context).pushNamed(Promotion.toPromotion);
+        },
+        padding: EdgeInsets.all(12),
+        color: app_color.icon,
+        child: Text('Login', style: TextStyle(color: Colors.white)),
       ),
     );
 
@@ -64,11 +64,26 @@ class _LoginPageState extends State<LoginPage> {
         'Forgot password?',
         style: TextStyle(color: Colors.black54),
       ),
-      onPressed: () {},
+      onPressed: () {
+          Navigator.of(context).pushNamed(ForgotPasswordPage.toForgotPassword);
+      }
     );
 
+    //belum memiliki akun
+    final belumMemilikiAkunLabel = FlatButton(
+      child: Text(
+        'Create Account',
+        style: TextStyle(color: Colors.black54),
+      ),
+      onPressed: () {
+        Navigator.of(context).pushNamed(RegisterPage.toRegister);
+      },
+    );
+
+
+
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: app_color.backgroundApp,
       body: Center(
         child: ListView(
           shrinkWrap: true,
@@ -81,7 +96,8 @@ class _LoginPageState extends State<LoginPage> {
             password,
             SizedBox(height: 24.0),
             loginButton,
-            forgotLabel
+            forgotLabel,
+            belumMemilikiAkunLabel
           ],
         ),
       ),

@@ -1,24 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:membership/views/login/login_page.dart';
 import 'package:membership/shared/app_colors.dart' as app_color;
+import 'package:membership/views/login/login_page.dart';
+import 'package:membership/shared/text_style.dart' as textStyle;
 
-class RegisterPage extends StatefulWidget {
-  static String toRegister = 'register-page';
+class ForgotPasswordPage extends StatefulWidget{
+  static String toForgotPassword = 'forgot-page';
   @override
-  _RegisterPageState createState() => new _RegisterPageState();
+  _ForgotPasswordPageState createState() => new _ForgotPasswordPageState();
 }
 
-class _RegisterPageState extends State<RegisterPage> {
+class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
   @override
   Widget build(BuildContext context) {
-    final logo = Hero(
-      tag: 'welcome',
-      child: CircleAvatar(
-        backgroundColor: Colors.transparent,
-        radius: 48.0,
-        child: Image.asset('assets/wel.png'),
-      ),
-    );
+    
+    
     final username = TextFormField(
       keyboardType: TextInputType.text,
       autofocus: false,
@@ -30,18 +25,18 @@ class _RegisterPageState extends State<RegisterPage> {
       ),
     );
 
-    final password = TextFormField(
+    final newPassword = TextFormField(
       autofocus: false,
       initialValue: '',
       obscureText: true,
       decoration: InputDecoration(
-        hintText: 'Password',
+        hintText: 'New Password',
         contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
       ),
     );
 
-    final confirmPassword = TextFormField(
+    final oldPassword = TextFormField(
       autofocus: false,
       initialValue: '',
       obscureText: true,
@@ -52,29 +47,7 @@ class _RegisterPageState extends State<RegisterPage> {
       ),
     );
 
-    final firstName = TextFormField(
-      keyboardType: TextInputType.text,
-      autofocus: false,
-      initialValue: '',
-      decoration: InputDecoration(
-        hintText: 'First Name',
-        contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
-      ),
-    );
-
-    final lastName = TextFormField(
-      keyboardType: TextInputType.text,
-      autofocus: false,
-      initialValue: '',
-      decoration: InputDecoration(
-        hintText: 'Last Name',
-        contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
-      ),
-    );
-
-    final registerButton = Padding(
+    final confirmPassword = Padding(
       padding: EdgeInsets.symmetric(vertical: 16.0),
       child: RaisedButton(
         shape: RoundedRectangleBorder(
@@ -85,35 +58,32 @@ class _RegisterPageState extends State<RegisterPage> {
         },
         padding: EdgeInsets.all(12),
         color: app_color.icon,
-        child: Text('Sign Up', style: TextStyle(color: Colors.white)),
+        child: Text('Change Password', style: TextStyle(color: Colors.white)),
       ),
     );
 
     return Scaffold(
+      backgroundColor: app_color.backgroundApp,
       appBar: new AppBar(
         backgroundColor: app_color.bar,
-        title: new Text("Register Account"),
+        title: new Text("Forgot Password", style: textStyle.textAppbar),
       ),
-      backgroundColor: app_color.backgroundApp,
       body: Center(
         child: ListView(
           shrinkWrap: true,
           padding: EdgeInsets.only(left: 24.0, right: 24.0),
           children: <Widget>[
-            logo,
-            SizedBox(height: 40.0),
-            firstName,
-            SizedBox(height: 8.0),
-            lastName,
-            SizedBox(height: 8.0),
+            new Padding(
+              padding: EdgeInsets.all(40),
+               child : Image.asset('assets/wel.png'),
+            ),
             username,
             SizedBox(height: 8.0),
-            password,
+            newPassword,
             SizedBox(height: 8.0),
-            confirmPassword,
-            SizedBox(height: 8.0),
-            
-            registerButton,
+            oldPassword,
+            SizedBox(height: 24.0),
+            confirmPassword
           ],
         ),
       ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:membership/views/login/login_page.dart';
 import 'package:membership/shared/app_colors.dart' as app_color;
+import 'package:membership/shared/text_style.dart' as textStyle;
 
 class RegisterPage extends StatefulWidget {
   static String toRegister = 'register-page';
@@ -92,7 +93,7 @@ class _RegisterPageState extends State<RegisterPage> {
     return Scaffold(
       appBar: new AppBar(
         backgroundColor: app_color.bar,
-        title: new Text("Register Account"),
+        title: new Text("Register Account", style: textStyle.textAppbar),
       ),
       backgroundColor: app_color.backgroundApp,
       body: Center(
