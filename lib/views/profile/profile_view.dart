@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:membership/shared/app_colors.dart' as app_color;
+import 'package:membership/shared/text_style.dart' as textStyle;
+
 
 
 class Profile extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
+    
     
     final username = TextFormField(
       keyboardType: TextInputType.text,
@@ -44,7 +47,7 @@ class Profile extends StatelessWidget{
       initialValue: '',
       obscureText: true,
       decoration: InputDecoration(
-        hintText: 'password',
+        hintText: 'Password',
         contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
       ),
@@ -84,16 +87,16 @@ class Profile extends StatelessWidget{
       ),
     );
 
-    final idNumber = TextFormField(
-      keyboardType: TextInputType.number,
-      autofocus: false,
-      initialValue: '',
-      decoration: InputDecoration(
-        hintText: 'Your ID Number',
-        contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
-      ),
-    );
+    // final idNumber = TextFormField(
+    //   keyboardType: TextInputType.number,
+    //   autofocus: false,
+    //   initialValue: '',
+    //   decoration: InputDecoration(
+    //     hintText: 'Your ID Number',
+    //     contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+    //     border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+    //   ),
+    // );
 
     final address = TextFormField(
       keyboardType: TextInputType.text,
@@ -125,13 +128,18 @@ class Profile extends StatelessWidget{
       backgroundColor: app_color.backgroundApp,
       appBar: new AppBar(
         backgroundColor: app_color.bar,
-        title: new Text("Profile Details"),
+        title: new Text("Profile Details", style: textStyle.textAppbar),
       ),
       body: Center(
         child: ListView(
           shrinkWrap: true,
           padding: EdgeInsets.only(left: 24.0, right: 24.0, top: 30),
           children: <Widget>[
+            new Padding(
+              padding: EdgeInsets.all(40),
+               child : Image.asset('assets/wel.png'),
+            ),
+            
             username,
             SizedBox(height: 15.0),
             firstName,

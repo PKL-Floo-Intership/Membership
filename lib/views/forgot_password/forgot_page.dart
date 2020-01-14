@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:membership/shared/app_colors.dart' as app_color;
 import 'package:membership/views/login/login_page.dart';
+import 'package:membership/shared/text_style.dart' as textStyle;
 
 class ForgotPasswordPage extends StatefulWidget{
   static String toForgotPassword = 'forgot-page';
   @override
-  _forgotPasswordPageState createState() => new _forgotPasswordPageState();
+  _ForgotPasswordPageState createState() => new _ForgotPasswordPageState();
 }
 
-class _forgotPasswordPageState extends State<ForgotPasswordPage> {
+class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
   @override
   Widget build(BuildContext context) {
     
@@ -40,7 +41,7 @@ class _forgotPasswordPageState extends State<ForgotPasswordPage> {
       initialValue: '',
       obscureText: true,
       decoration: InputDecoration(
-        hintText: 'Old Password',
+        hintText: 'Confirm Password',
         contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
       ),
@@ -57,7 +58,7 @@ class _forgotPasswordPageState extends State<ForgotPasswordPage> {
         },
         padding: EdgeInsets.all(12),
         color: app_color.icon,
-        child: Text('Confirm Password', style: TextStyle(color: Colors.white)),
+        child: Text('Change Password', style: TextStyle(color: Colors.white)),
       ),
     );
 
@@ -65,13 +66,17 @@ class _forgotPasswordPageState extends State<ForgotPasswordPage> {
       backgroundColor: app_color.backgroundApp,
       appBar: new AppBar(
         backgroundColor: app_color.bar,
-        title: new Text("Forgot Password"),
+        title: new Text("Forgot Password", style: textStyle.textAppbar),
       ),
       body: Center(
         child: ListView(
           shrinkWrap: true,
           padding: EdgeInsets.only(left: 24.0, right: 24.0),
           children: <Widget>[
+            new Padding(
+              padding: EdgeInsets.all(40),
+               child : Image.asset('assets/wel.png'),
+            ),
             username,
             SizedBox(height: 8.0),
             newPassword,
