@@ -35,7 +35,7 @@ class _LoginPageState extends State<LoginPage> {
       autofocus: false,
       initialValue: '',
       decoration: InputDecoration(
-        hintText: 'Email',
+        hintText: 'Username or Email',
         contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
       ),
