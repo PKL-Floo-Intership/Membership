@@ -10,3 +10,5 @@ const textListT = TextStyle(fontWeight: FontWeight.w700, fontSize: 22.0, color: 
 const textListD = TextStyle(fontWeight: FontWeight.w300, fontSize: 16.0, color: appColor.icon);
 const textListx = TextStyle(fontWeight: FontWeight.w400, fontSize: 16.0, color: appColor.icon);
 const textBott = TextStyle(fontWeight: FontWeight.w500, fontSize: 14.0, color: appColor.icon);
+const normalFontInputError = TextStyle(fontWeight: FontWeight.normal, fontSize: 12.0, color: appColor.inputError);
+const normalFontBlue = TextStyle(fontWeight: FontWeight.w600, fontSize: 12.0, color: appColor.buttonDefault);
