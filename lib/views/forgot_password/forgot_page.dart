@@ -10,6 +10,14 @@ class ForgotPasswordPage extends StatefulWidget{
 }
 
 class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
+
+  bool _isHidePassword = true;
+  void _togglePasswordVisibility(){
+    setState(() {
+      _isHidePassword = !_isHidePassword;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     
@@ -26,25 +34,45 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
     );
 
     final newPassword = TextFormField(
+      obscureText: _isHidePassword,
       autofocus: false,
       initialValue: '',
-      obscureText: true,
+      keyboardType: TextInputType.text,
       decoration: InputDecoration(
         hintText: 'New Password',
         contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+        suffixIcon: GestureDetector(
+        onTap:(){
+          _togglePasswordVisibility();
+        },
+        child: Icon(
+          _isHidePassword ? Icons.visibility_off : Icons.visibility,
+          color: _isHidePassword ? Colors.blueGrey : Colors.blueGrey,
+        ),
       ),
+      )
     );
 
     final oldPassword = TextFormField(
+     obscureText: _isHidePassword,
       autofocus: false,
       initialValue: '',
-      obscureText: true,
+      keyboardType: TextInputType.text,
       decoration: InputDecoration(
         hintText: 'Confirm Password',
         contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+        suffixIcon: GestureDetector(
+        onTap:(){
+          _togglePasswordVisibility();
+        },
+        child: Icon(
+          _isHidePassword ? Icons.visibility_off : Icons.visibility,
+          color: _isHidePassword ? Colors.blueGrey : Colors.blueGrey,
+        ),
       ),
+      )
     );
 
     final confirmPassword = Padding(

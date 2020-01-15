@@ -10,6 +10,14 @@ class RegisterPage extends StatefulWidget {
 }
 
 class _RegisterPageState extends State<RegisterPage> {
+  
+  bool _isHidePassword = true;
+  void _togglePasswordVisibility(){
+    setState(() {
+      _isHidePassword = !_isHidePassword;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     final logo = Hero(
@@ -32,25 +40,47 @@ class _RegisterPageState extends State<RegisterPage> {
     );
 
     final password = TextFormField(
+      obscureText: _isHidePassword,
       autofocus: false,
       initialValue: '',
-      obscureText: true,
+      keyboardType: TextInputType.text,
       decoration: InputDecoration(
         hintText: 'Password',
         contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+        suffixIcon: GestureDetector(
+        onTap:(){
+          _togglePasswordVisibility();
+
+        },
+        child: Icon(
+          _isHidePassword ? Icons.visibility_off : Icons.visibility,
+          color: _isHidePassword ? Colors.blueGrey : Colors.blueGrey,
+        ),
       ),
+      )
     );
 
     final confirmPassword = TextFormField(
+      obscureText: _isHidePassword,
       autofocus: false,
       initialValue: '',
-      obscureText: true,
+      keyboardType: TextInputType.text,
       decoration: InputDecoration(
         hintText: 'Confirm Password',
         contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+        suffixIcon: GestureDetector(
+        onTap:(){
+          _togglePasswordVisibility();
+
+        },
+        child: Icon(
+          _isHidePassword ? Icons.visibility_off : Icons.visibility,
+          color: _isHidePassword ? Colors.blueGrey : Colors.blueGrey,
+        ),
       ),
+      )
     );
 
     final firstName = TextFormField(
@@ -70,6 +100,17 @@ class _RegisterPageState extends State<RegisterPage> {
       initialValue: '',
       decoration: InputDecoration(
         hintText: 'Last Name',
+        contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+      ),
+    );
+
+    final email = TextFormField(
+      keyboardType: TextInputType.emailAddress,
+      autofocus: false,
+      initialValue: '',
+      decoration: InputDecoration(
+        hintText: 'Email',
         contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
       ),
@@ -108,6 +149,8 @@ class _RegisterPageState extends State<RegisterPage> {
             lastName,
             SizedBox(height: 8.0),
             username,
+            SizedBox(height: 8.0),
+            email,
             SizedBox(height: 8.0),
             password,
             SizedBox(height: 8.0),
