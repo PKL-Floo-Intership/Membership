@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:membership/views/login/login_page.dart';
 import 'package:membership/shared/app_colors.dart' as app_color;
+import 'package:membership/shared/text_style.dart' as textStyle;
 
 class RegisterPage extends StatefulWidget {
   static String toRegister = 'register-page';
@@ -9,6 +10,14 @@ class RegisterPage extends StatefulWidget {
 }
 
 class _RegisterPageState extends State<RegisterPage> {
+  
+  bool _isHidePassword = true;
+  void _togglePasswordVisibility(){
+    setState(() {
+      _isHidePassword = !_isHidePassword;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     final logo = Hero(
@@ -31,25 +40,47 @@ class _RegisterPageState extends State<RegisterPage> {
     );
 
     final password = TextFormField(
+      obscureText: _isHidePassword,
       autofocus: false,
       initialValue: '',
-      obscureText: true,
+      keyboardType: TextInputType.text,
       decoration: InputDecoration(
         hintText: 'Password',
         contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+        suffixIcon: GestureDetector(
+        onTap:(){
+          _togglePasswordVisibility();
+
+        },
+        child: Icon(
+          _isHidePassword ? Icons.visibility_off : Icons.visibility,
+          color: _isHidePassword ? Colors.blueGrey : Colors.blueGrey,
+        ),
       ),
+      )
     );
 
     final confirmPassword = TextFormField(
+      obscureText: _isHidePassword,
       autofocus: false,
       initialValue: '',
-      obscureText: true,
+      keyboardType: TextInputType.text,
       decoration: InputDecoration(
         hintText: 'Confirm Password',
         contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+        suffixIcon: GestureDetector(
+        onTap:(){
+          _togglePasswordVisibility();
+
+        },
+        child: Icon(
+          _isHidePassword ? Icons.visibility_off : Icons.visibility,
+          color: _isHidePassword ? Colors.blueGrey : Colors.blueGrey,
+        ),
       ),
+      )
     );
 
     final firstName = TextFormField(
@@ -74,6 +105,17 @@ class _RegisterPageState extends State<RegisterPage> {
       ),
     );
 
+    final email = TextFormField(
+      keyboardType: TextInputType.emailAddress,
+      autofocus: false,
+      initialValue: '',
+      decoration: InputDecoration(
+        hintText: 'Email',
+        contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+      ),
+    );
+
     final registerButton = Padding(
       padding: EdgeInsets.symmetric(vertical: 16.0),
       child: RaisedButton(
@@ -92,7 +134,7 @@ class _RegisterPageState extends State<RegisterPage> {
     return Scaffold(
       appBar: new AppBar(
         backgroundColor: app_color.bar,
-        title: new Text("Register Account"),
+        title: new Text("Register Account", style: textStyle.textAppbar),
       ),
       backgroundColor: app_color.backgroundApp,
       body: Center(
@@ -107,6 +149,8 @@ class _RegisterPageState extends State<RegisterPage> {
             lastName,
             SizedBox(height: 8.0),
             username,
+            SizedBox(height: 8.0),
+            email,
             SizedBox(height: 8.0),
             password,
             SizedBox(height: 8.0),

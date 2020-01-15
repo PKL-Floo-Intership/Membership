@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:membership/register/register_page.dart';
-import 'package:membership/tab_bar/promotion_view.dart';
+import 'package:membership/views/forgot_password/forgot_page.dart';
+import 'package:membership/views/register/register_page.dart';
+import 'package:membership/views/promotion/promotion_view.dart';
 import 'package:membership/shared/app_colors.dart' as app_color;
 
 class LoginPage extends StatefulWidget {
@@ -10,6 +11,14 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+
+  bool _isHidePassword = true;
+  void _togglePasswordVisibility(){
+    setState(() {
+      _isHidePassword = !_isHidePassword;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     final logo = Hero(
@@ -26,21 +35,33 @@ class _LoginPageState extends State<LoginPage> {
       autofocus: false,
       initialValue: '',
       decoration: InputDecoration(
-        hintText: 'Email',
+        hintText: 'Username or Email',
         contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
       ),
     );
 
     final password = TextFormField(
+      // child: _buildPasswordField();
+      obscureText: _isHidePassword,
       autofocus: false,
       initialValue: '',
-      obscureText: true,
+      keyboardType: TextInputType.text,
       decoration: InputDecoration(
         hintText: 'Password',
         contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+        suffixIcon: GestureDetector(
+        onTap:(){
+          _togglePasswordVisibility();
+
+        },
+        child: Icon(
+          _isHidePassword ? Icons.visibility_off : Icons.visibility,
+          color: _isHidePassword ? Colors.blueGrey : Colors.blueGrey,
+        ),
       ),
+      )
     );
 
     final loginButton = Padding(
@@ -64,7 +85,7 @@ class _LoginPageState extends State<LoginPage> {
         style: TextStyle(color: Colors.black54),
       ),
       onPressed: () {
-          // Navigator.of(context).pushNamed(RegisterPage.tag);
+          Navigator.of(context).pushNamed(ForgotPasswordPage.toForgotPassword);
       }
     );
 
@@ -103,3 +124,4 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 }
+
