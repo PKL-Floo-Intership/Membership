@@ -42,7 +42,6 @@ class _LoginPageState extends State<LoginPage> {
     );
 
     final password = TextFormField(
-      // child: _buildPasswordField();
       obscureText: _isHidePassword,
       autofocus: false,
       initialValue: '',
